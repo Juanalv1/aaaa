@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-slate-950 font-overpass">
+  <main class="w-full h-screen grid place-content-center text-white">
+    <section class="flex flex-col  justify-center w-72  p-6 rounded-2xl  bg-gray-900 text-start lg:w-96 " id="rate-section">
+      <div class="w-10 p-3 bg-gray-800 rounded-full mb-2">
+        <span><svg width="17" height="16" xmlns="http://www.w3.org/2000/svg"><path d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z" fill="#FC7614"/></svg></span>
+      </div>
+      <h1 class="text-2xl font-semibold py-2">How did we do?</h1>
+      <p class="font-normal text-sm text-gray-500">Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
+     
+        <form id="rate-form" class="grid grid-cols-5 grid-rows-1 gap-4 my-3 text-gray-400 text-sm text-center">
+
+          <label for="rate1" class="bg-gray-700 rate-input rounded-full py-2 px-2 cursor-pointer hover:bg-orange-500 lg:py-3  lg:text-base">1</label>
+        <input type="checkbox" name="rate" id="rate1" value="1" class="hidden input-rating">
+
+        <label for="rate2" class="bg-gray-700 rate-input rounded-full py-2 px-2 cursor-pointer hover:bg-orange-500  lg:py-3  lg:text-base">2</label>
+        <input type="checkbox" name="rate" id="rate2" value="2" class="hidden input-rating">
+
+        <label for="rate3"  class="bg-gray-700 rate-input rounded-full py-2 px-2 cursor-pointer hover:bg-orange-500 
+         lg:py-3 lg:text-base">3</label>
+        <input type="checkbox" name="rate" id="rate3" value="3" class="hidden input-rating">
+
+        <label for="rate4" class="bg-gray-700 rate-input rounded-full py-2 px-2 cursor-pointer hover:bg-orange-500 lg:py-3  lg:text-base">4</label>
+        <input type="checkbox" name="rate" id="rate4" value="4" class="hidden input-rating">
+
+        <label for="rate5" class="bg-gray-700 rate-input rounded-full py-2 px-2 cursor-pointer hover:bg-orange-500
+       lg:py-3  lg:text-base">5</label>
+        <input type="checkbox" name="rate" id="rate5" value="5" class="hidden input-rating">
+
+      
+      <button type="submit" class=" col-span-5 text-white bg-orange-500 h-10 rounded-2xl hover:bg-white hover:text-orange-500
+       active:bg-white" id="submit-button">S U B M I T</button>
+    </form>
+    </section>
+
+    <section class=" flex flex-col  justify-center w-72  p-6 rounded-2xl  bg-gray-900 text-center lg:w-96 lg:py-10 hidden" id="thank-you">
+      <img src="../public/img/illustration-thank-you.svg" alt="" class="w-2/4 mx-auto mb-6">
+      <div class="bg-gray-800 rounded-xl text-center text-sm
+      text-orange-500 py-1 mb-6">
+        You rated <span id="user-rating"></span> out of 5
+      </div>
+      <h1 class="text-2xl font-semibold py-2">Thank you!</h1>
+      <p class="font-normal text-sm text-gray-500">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch</p>
+    </section>
+  </main>
+<script src="../index.js"></script>
+</body>
+</html>
