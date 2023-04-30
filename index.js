@@ -9,48 +9,27 @@ const thankYou = document.querySelector('#thank-you')
 const inputs = document.querySelectorAll('.rate-input')
 
 
+let selectedIndex = -1; // Variable que guardará el índice de la entrada seleccionada
+
 for (let index = 0; index < inputs.length; index++) {
   const input = inputs[index];
+
   input.addEventListener('click', function(){
     console.log('click')
     input.classList.toggle('bg-orange-500')
-    if (inputs[0].classList.contains('bg-orange-500')) {
-      inputs[1].classList.remove('bg-orange-500')
-      inputs[2].classList.remove('bg-orange-500')
-      inputs[3].classList.remove('bg-orange-500')
-      inputs[4].classList.remove('bg-orange-500')
-    }else if(inputs[1].classList.contains('bg-orange-500')){
-      inputs[0].classList.remove('bg-orange-500')
-      inputs[2].classList.remove('bg-orange-500')
-      inputs[3].classList.remove('bg-orange-500')
-      inputs[4].classList.remove('bg-orange-500')
+
+    if (input.classList.contains('bg-orange-500')) {
+      // Si se ha seleccionado una entrada, se deselecciona la entrada anterior
+      if (selectedIndex >= 0 && selectedIndex !== index) {
+        inputs[selectedIndex].classList.remove('bg-orange-500');
+      }
+      selectedIndex = index; // Se actualiza el índice de la entrada seleccionada
+    } else {
+      selectedIndex = -1; // Si se ha deseleccionado una entrada, se resetea el índice de la entrada seleccionada
     }
-    else if(inputs[2].classList.contains('bg-orange-500')){
-      inputs[0].classList.remove('bg-orange-500')
-      inputs[1].classList.remove('bg-orange-500')
-      inputs[3].classList.remove('bg-orange-500')
-      inputs[4].classList.remove('bg-orange-500')
-    }
-    else if(inputs[3].classList.contains('bg-orange-500')){
-      inputs[0].classList.remove('bg-orange-500')
-      inputs[1].classList.remove('bg-orange-500')
-      inputs[2].classList.remove('bg-orange-500')
-      inputs[4].classList.remove('bg-orange-500')
-    }
-    else if(inputs[4].classList.contains('bg-orange-500')){
-      inputs[0].classList.remove('bg-orange-500')
-      inputs[1].classList.remove('bg-orange-500')
-      inputs[2].classList.remove('bg-orange-500')
-      inputs[3].classList.remove('bg-orange-500')
-    }else {
-      inputs[0].classList.remove('bg-orange-500')
-      inputs[1].classList.remove('bg-orange-500')
-      inputs[2].classList.remove('bg-orange-500')
-      inputs[3].classList.remove('bg-orange-500')
-      inputs[4].classList.remove('bg-orange-500')
-    }
-  })
+  });
 }
+
 
 
 rateForm.addEventListener('submit', getData)
